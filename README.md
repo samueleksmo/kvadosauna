@@ -2,6 +2,7 @@
 
 Website for Ekudden Bastu (Kvädö Sauna): a private wood-fired sauna with sea swimming at Kvädöfjärden.
 Built with SvelteKit 2 / Svelte 5 and hosted on Cloudflare Workers (free plan).
+Also my first time building a booking solution! It was fun! 
 
 ## Development
 
