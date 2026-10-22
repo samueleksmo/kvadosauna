@@ -1,0 +1,211 @@
+@import '@fontsource/cormorant-garamond/300.css';
+@import '@fontsource/cormorant-garamond/400.css';
+@import '@fontsource/cormorant-garamond/300-italic.css';
+@import '@fontsource/ibm-plex-mono/300.css';
+@import '@fontsource/ibm-plex-mono/400.css';
+@import '@fontsource/ibm-plex-mono/500.css';
+
+/*
+ * Quiet Nordic editorial look: linen & stone neutrals, light display serif,
+ * typewriter-style mono body, hairlines instead of cards and shadows.
+ */
+:root {
+	--font-serif: 'Cormorant Garamond', 'Iowan Old Style', Georgia, serif;
+	--font-mono: 'IBM Plex Mono', ui-monospace, 'Courier New', monospace;
+
+	--paper: #ffffff;
+	--linen: #f3f0ea;
+	--stone: #e2ddd3;
+	--taupe: #a59c8d;
+	--moss: #6f6c5c; /* footer */
+	--ink: #1d1b18;
+	--ink-soft: #4a453e;
+	--muted: #7b7469;
+	--line: rgba(29, 27, 24, 0.18);
+	--accent: #7a2e28; /* falu red – used sparingly */
+
+	/* legacy names used by guide/FAQ pages, mapped onto the new palette */
+	--falu-red: var(--ink);
+	--falu-red-dark: var(--moss);
+	--wood: var(--taupe);
+	--wood-light: var(--stone);
+	--cream: var(--paper);
+	--smoke: var(--ink-soft);
+	--text: var(--ink);
+	--text-muted: var(--ink-soft);
+	--radius: 0px;
+	--shadow: none;
+	--max-width: 1200px;
+	--header-h: 72px;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: var(--header-h);
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	min-height: 100vh;
+	margin: 0;
+	background: var(--paper);
+	color: var(--ink);
+	font-family: var(--font-mono);
+	font-size: 15px;
+	font-weight: 300;
+	line-height: 1.75;
+	letter-spacing: -0.01em;
+	-webkit-font-smoothing: antialiased;
+}
+
+body > div {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+h1,
+h2,
+h3 {
+	font-family: var(--font-serif);
+	font-weight: 300;
+	color: var(--ink);
+	letter-spacing: -0.01em;
+	line-height: 1.08;
+	text-wrap: balance;
+}
+
+h1 {
+	font-size: clamp(2.6rem, 7vw, 5.2rem);
+}
+
+h2 {
+	font-size: clamp(2.2rem, 5vw, 3.8rem);
+	margin: 0 0 1.5rem;
+}
+
+h3 {
+	font-size: clamp(1.5rem, 2.6vw, 2rem);
+}
+
+p {
+	color: var(--ink-soft);
+	margin: 0 0 1.1em;
+}
+
+strong {
+	font-weight: 500;
+	color: var(--ink);
+}
+
+a {
+	color: var(--ink);
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 3px;
+}
+
+a:hover {
+	color: var(--muted);
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+button {
+	font: inherit;
+	cursor: pointer;
+}
+
+:focus-visible {
+	outline: 1px solid var(--ink);
+	outline-offset: 3px;
+}
+
+::selection {
+	background: var(--stone);
+}
+
+/* Small uppercase label, e.g. section eyebrows */
+.label {
+	font-family: var(--font-mono);
+	font-size: 0.72rem;
+	font-weight: 400;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+	color: var(--muted);
+	margin: 0 0 1.25rem;
+}
+
+/* Outlined button – the only button style on the site */
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.6rem;
+	min-width: 11rem;
+	padding: 0.95rem 1.8rem;
+	border: 1px solid var(--ink);
+	border-radius: 0;
+	background: transparent;
+	color: var(--ink);
+	font-family: var(--font-mono);
+	font-size: 0.75rem;
+	font-weight: 400;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	text-decoration: none;
+	transition:
+		background 0.25s,
+		color 0.25s;
+}
+
+.btn:hover {
+	background: var(--ink);
+	color: var(--paper);
+}
+
+.btn-light {
+	border-color: var(--paper);
+	color: var(--paper);
+}
+
+.btn-light:hover {
+	background: var(--paper);
+	color: var(--ink);
+}
+
+/* Photos are colour-graded at build time by scripts/optimize-images.js */
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+	*,
+	*::before,
+	*::after {
+		transition: none !important;
+		animation: none !important;
+	}
+}
+
+.reveal {
+	opacity: 0;
+	transform: translateY(24px);
+	transition:
+		opacity 0.9s ease,
+		transform 0.9s ease;
+}
+
+.reveal.revealed {
+	opacity: 1;
+	transform: none;
+}

@@ -1,0 +1,15 @@
+// Cloudflare Workers config – https://developers.cloudflare.com/workers/wrangler/configuration/
+// Secrets (RESEND_API_KEY etc.) are NOT stored here: add them in the Cloudflare dashboard
+// (Workers & Pages → kvadosauna → Settings → Variables and Secrets) or with `npx wrangler secret put NAME`.
+{
+	"$schema": "./node_modules/wrangler/config-schema.json",
+	"name": "kvadosauna",
+	"main": ".svelte-kit/cloudflare/_worker.js",
+	"compatibility_date": "2026-10-01",
+	"compatibility_flags": ["nodejs_als"],
+	"assets": {
+		"binding": "ASSETS",
+		"directory": ".svelte-kit/cloudflare"
+	},
+	"observability": { "enabled": true }
+}

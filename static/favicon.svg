@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Kvädö Sauna: minimal cabin silhouette with a wisp of steam -->
+  <path d="M45 13c-4.5-3.5 4.5-6 0-10.5" fill="none" stroke="#a59c8d" stroke-width="5" stroke-linecap="round"/>
+  <path d="M6 34 32 16l9 6.2V16h8v11.8L58 34v28H6Z" fill="#8e2f28"/>
+</svg>
